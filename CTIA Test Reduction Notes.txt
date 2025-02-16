@@ -1,0 +1,6 @@
+Note 1: These priority lists use the same nomenclature for identifying LTE CA combinations as the current CTIA OTA Test Plan where the first band is the PCC and all subsequent bands are SCCs. Refer to CTIA 01.01 section 2.1.7.3 for the TIS testing requirements for high priority LTE CA combinations. Per CTIA 01.01 section 2.1.7.3, single point offset testing may be used for TIS testing of high priority LTE CA combinations. However, if a single point offset test results in a TIS value that deviates more than 3 dB from the TIS of the fully tested reference, then a full TIS measurement is required.  
+Note 2: Only required if the DUT does not support a TIS 3 CC LTE CA combination (for the given operator) herein which includes the corresponding PCC and SCC combination.
+Note 3: For devices that support Band 66, testing of the Band 4 LTE CA combinations are not required.
+Note 4: TIS testing is required for PCC, SCC1, and SCC2. 
+Note 5: TIS testing is required for PCC only if T-Mobile is one of the target operator(s). Otherwise, TIS testing is required for PCC, SCC1, and SCC2. 
+Note 6: This band combination is for information only and not considered as normative. The band combination will be included in future test plan releases.

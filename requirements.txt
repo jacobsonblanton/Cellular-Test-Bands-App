@@ -1,0 +1,6 @@
+matplotlib==3.10.0
+numpy==2.2.2
+openpyxl==3.1.4
+pandas==2.2.3
+py2exe==0.13.0.2
+ttkbootstrap==1.10.1

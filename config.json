@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "Quectel": "Quectel.QuectelBands",
+    "Sierra": "SierraWireless.SierraBands",
+    "Telit": "Telit.Telit"
+  }
+}
