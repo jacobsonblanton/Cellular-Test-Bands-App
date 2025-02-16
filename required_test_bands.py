@@ -7,6 +7,7 @@ from Telit import Telit
 import json
 import importlib
 from pprint import pprint
+from os import path, getcwd
 
 
 class RequiredTestBands:
@@ -20,9 +21,11 @@ class RequiredTestBands:
         """
         Loads cellular module classes dynamically based on config.json.
         """
+        current_directory = getcwd()
+        config_json_file = "config.json"
         try:
             with open(
-                r"C:\Users\jblanton\Documents\Intertek\Required Bands CA-ENDC\config.json",
+                path.join(current_directory, config_json_file),
                 "r",
             ) as config_file:
                 config = json.load(config_file)
@@ -443,4 +446,5 @@ class RequiredTestBands:
 
 if __name__ == "__main__":
     req = RequiredTestBands()
-    pprint(req.test_combos("Quectel", "RM500Q-GL", "AT&T"))
+    # pprint(req.test_combos("Quectel", "RM500Q-GL", "AT&T"))
+    # pprint(req.load_modules())
