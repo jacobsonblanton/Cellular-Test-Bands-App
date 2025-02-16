@@ -2,6 +2,7 @@
 import pandas as pd
 from operator_bands import OperatorBands, OperatorBandsNR
 from pprint import pprint
+from os import path, getcwd
 
 
 class SierraBands:
@@ -9,7 +10,9 @@ class SierraBands:
         """
         Initialize the class and load CA & ENDC band combinations dynamically.
         """
-        self.file_path = "SWIX55C_03.09.11.00_EM9191_1007_LE_1.4_rfcombos.xlsx"
+        self.file_path = path.join(
+            getcwd(), "SWIX55C_03.09.11.00_EM9191_1007_LE_1.4_rfcombos.xlsx"
+        )
         self.ca_combos = self._load_data(sheet_name="RFCOMBOS", mode="CA")
         self.endc_combos = self._load_data(sheet_name="RFC_format sub-6", mode="ENDC")
 

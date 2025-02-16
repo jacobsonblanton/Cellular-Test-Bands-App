@@ -2,6 +2,7 @@
 import pandas as pd
 from operator_bands import OperatorBands, OperatorBandsNR
 from pprint import pprint
+from os import path, getcwd
 
 
 class QuectelBands:
@@ -9,7 +10,9 @@ class QuectelBands:
         """
         Initialize the QuectelBands class with the CA and NR combinations from an Excel file.
         """
-        default_path = r"C:\Users\jblanton\Documents\Intertek\Required Bands CA-ENDC\Quectel_RM50xQ_Series_CA_EN-DC_Features_V1.6.xlsx"
+        default_path = path.join(
+            getcwd(), "Quectel_RM50xQ_Series_CA_EN-DC_Features_V1.6.xlsx"
+        )
         self.file_path = file_path if file_path else default_path
 
         #  Define sheet-specific column mappings

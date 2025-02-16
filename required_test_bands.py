@@ -446,5 +446,5 @@ class RequiredTestBands:
 
 if __name__ == "__main__":
     req = RequiredTestBands()
-    # pprint(req.test_combos("Quectel", "RM500Q-GL", "AT&T"))
+    pprint(req.test_combos("Quectel", "RM500Q-GL", "AT&T"))
     # pprint(req.load_modules())

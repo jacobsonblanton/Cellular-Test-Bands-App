@@ -2,6 +2,7 @@
 import pandas as pd
 import re
 from pprint import pprint
+from os import path, getcwd
 
 
 class OperatorBands:
@@ -9,7 +10,9 @@ class OperatorBands:
         """
         Initialize the OperatorBands class with an optional custom file path.
         """
-        default_path = r"C:\Users\jblanton\Documents\Intertek\Required Bands CA-ENDC\CTIA-01.02-Operator-Priority-List-V4.0.1.xlsx"
+        default_path = path.join(
+            getcwd(), "CTIA-01.02-Operator-Priority-List-V4.0.1.xlsx"
+        )
         self.file_path = file_path if file_path else default_path
 
         self.ca_df = pd.read_excel(
@@ -84,7 +87,9 @@ class OperatorBandsNR:
         """
         Initialize the OperatorBandsNR class with an optional custom file path.
         """
-        default_path = r"C:\Users\jblanton\Documents\Intertek\Required Bands CA-ENDC\CTIA-01.02-Operator-Priority-List-V4.0.1.xlsx"
+        default_path = path.join(
+            getcwd(), "CTIA-01.02-Operator-Priority-List-V4.0.1.xlsx"
+        )
         self.file_path = file_path if file_path else default_path
 
         self.nr_df = pd.read_excel(
