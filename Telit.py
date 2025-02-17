@@ -2,6 +2,7 @@
 import pandas as pd
 from operator_bands import OperatorBands, OperatorBandsNR
 from pprint import pprint
+from os import path, getcwd
 
 
 class Telit:
@@ -9,7 +10,9 @@ class Telit:
         """
         Initialize the class and load CA & ENDC band combinations dynamically.
         """
-        self.file_path = "30691NT12001A _FN990_Family_CA_ENDC_List_Rev.3_draft.xlsx"
+        self.file_path = path.join(
+            getcwd(), "30691NT12001A _FN990_Family_CA_ENDC_List_Rev.3_draft.xlsx"
+        )
         self.ca_bands = self._load_ca_combos()
         self.endc_bands = self._load_endc_combos()
 
