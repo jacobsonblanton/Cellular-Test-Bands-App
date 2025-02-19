@@ -400,7 +400,7 @@ class RequiredTestBands:
         filtered_ca = self.remove_invalid_combos(
             list(ca_trp), list(ca_tis), target_operator
         )
-        return filtered_ca
+
         filtered_trp = filtered_ca["TRP"]
         filtered_tis = filtered_ca["TIS"]
 
