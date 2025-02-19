@@ -325,6 +325,17 @@ class RequiredTestBands:
             },
         }
 
+        # ✅ Step 1: Ensure we only process the target operator
+        if target_operator not in valid_endc_bands:
+            return {"TRP": trp, "TIS": tis}
+
+        # ✅ Step 2: Filter out bands that are NOT in valid_endc_bands
+        for category in ["TRP", "TIS"]:
+            bands_list = trp if category == "TRP" else tis
+            valid_bands = valid_endc_bands[target_operator][category]
+            bands_list[:] = [band for band in bands_list if band in valid_bands]
+            print(f"🟢 Valid EN-DC {category} After Filtering: {bands_list}")
+
         # ✅ Ensure the target operator is in the rules
         if target_operator in endc_removal_rules:
             for category in ["TRP", "TIS"]:
@@ -400,7 +411,7 @@ class RequiredTestBands:
         filtered_ca = self.remove_invalid_combos(
             list(ca_trp), list(ca_tis), target_operator
         )
-        return filtered_ca
+        # return filtered_ca
         filtered_trp = filtered_ca["TRP"]
         filtered_tis = filtered_ca["TIS"]
 
@@ -446,5 +457,5 @@ class RequiredTestBands:
 
 if __name__ == "__main__":
     req = RequiredTestBands()
-    pprint(req.test_combos("Quectel", "RM500Q-GL", "AT&T"))
+    pprint(req.test_combos("Quectel", "RM502Q-AE", "AT&T"))
     # pprint(req.load_modules())
